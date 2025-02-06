@@ -61,5 +61,5 @@ Then open [http://localhost:3000](http://localhost:3000) in your browser to play
 
 Enjoy playing! 🎉
 
-_with love - sabhya_
+_Made with ❤️ by sabhya_
 
