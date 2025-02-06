@@ -15,18 +15,26 @@ export default function TicTacToe() {
     [0, 4, 8], [2, 4, 6]
   ];
 
+  // Function to play sound
+  const playSound = (sound) => {
+    const audio = new Audio(`/sounds/${sound}.mp3`);
+    audio.play();
+  };
+
   const checkWinner = (newBoard) => {
     for (let pattern of winningPatterns) {
       const [a, b, c] = pattern;
       if (newBoard[a] && newBoard[a] === newBoard[b] && newBoard[b] === newBoard[c]) {
         setWinner(newBoard[a]);
         setShowMessage(true);
+        playSound('win'); // Play win sound
         return true;
       }
     }
     if (!newBoard.includes('')) {
       setWinner('DRAW');
       setShowMessage(true);
+      playSound('draw'); // Play draw sound
     }
     return false;
   };
@@ -40,10 +48,13 @@ export default function TicTacToe() {
     setIsX(!isX);
     setCount(count + 1);
 
+    playSound('click'); // Play click sound when a button is pressed
+
     checkWinner(newBoard);
   };
 
   const resetGame = () => {
+    playSound('click'); // Play click sound when a button is pressed
     setBoard(Array(9).fill(''));
     setIsX(true);
     setCount(0);
