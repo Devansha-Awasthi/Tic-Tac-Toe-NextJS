@@ -27,14 +27,14 @@ export default function TicTacToe() {
       if (newBoard[a] && newBoard[a] === newBoard[b] && newBoard[b] === newBoard[c]) {
         setWinner(newBoard[a]);
         setShowMessage(true);
-        playSound('win'); // Play win sound
+        playSound('Winner'); // Play win sound
         return true;
       }
     }
     if (!newBoard.includes('')) {
       setWinner('DRAW');
       setShowMessage(true);
-      playSound('draw'); // Play draw sound
+      playSound('DrawGame'); // Play draw sound
     }
     return false;
   };
