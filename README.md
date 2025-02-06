@@ -1,6 +1,6 @@
 # Tic Tac Toe Game
 
-A simple and fun **Tic Tac Toe** game built using **Next.js**, **React**, and **Tailwind CSS**. Play against a friend and enjoy the classic game with a modern web framework!
+A simple and fun **Tic Tac Toe** game built using **Next.js**, **React**, and **Tailwind CSS**. Play against a friend and enjoy the classic game with a modern web framework! It got sound too!🔊
 
 ---
 
