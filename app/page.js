@@ -21,6 +21,13 @@ export default function TicTacToe() {
     audio.play();
   };
 
+  // Function to trigger vibration (if supported)
+  const vibrate = (pattern) => {
+    if ("vibrate" in navigator) {
+      navigator.vibrate(pattern);
+    }
+  };
+
   const checkWinner = (newBoard) => {
     for (let pattern of winningPatterns) {
       const [a, b, c] = pattern;
@@ -28,6 +35,7 @@ export default function TicTacToe() {
         setWinner(newBoard[a]);
         setShowMessage(true);
         playSound('Winner'); // Play win sound
+        vibrate([200, 100, 200]); // Strong vibration for winner
         return true;
       }
     }
@@ -35,6 +43,7 @@ export default function TicTacToe() {
       setWinner('DRAW');
       setShowMessage(true);
       playSound('DrawGame'); // Play draw sound
+      vibrate(500); // Long vibration for draw
     }
     return false;
   };
@@ -49,12 +58,13 @@ export default function TicTacToe() {
     setCount(count + 1);
 
     playSound('click'); // Play click sound when a button is pressed
-
+    vibrate(50); // Short vibration on button press
     checkWinner(newBoard);
   };
 
   const resetGame = () => {
     playSound('click'); // Play click sound when a button is pressed
+    vibrate(100); // Light vibration on reset
     setBoard(Array(9).fill(''));
     setIsX(true);
     setCount(0);
