@@ -35,7 +35,7 @@ export default function TicTacToe() {
         setWinner(newBoard[a]);
         setShowMessage(true);
         playSound('Winner'); // Play win sound
-        vibrate([200, 100, 200]); // Strong vibration for winner
+        vibrate(500); // Strong vibration for winner
         return true;
       }
     }
