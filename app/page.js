@@ -87,6 +87,7 @@ export default function TicTacToe() {
           </button>
         </div>
       )}
+      <h1 className="text-4xl font-bold font-sans my-6 text-black">Devansha Awasthi</h1>
       <h1 className="text-4xl font-bold font-sans my-6 text-black">TIC TAC TOE</h1>
       <div className="grid grid-cols-3 gap-4 w-64">
         {board.map((value, index) => (
